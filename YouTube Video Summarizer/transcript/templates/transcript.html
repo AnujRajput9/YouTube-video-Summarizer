@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transcript Summary</title>
+</head>
+<body>
+
+<h2>Transcript Summary</h2>
+
+{% if transcript %}
+    <div style="white-space: pre-line;">{{ transcript }}</div>
+{% else %}
+    <p>No transcript available.</p>
+{% endif %}
+
+{% if audio_url %}
+    <h3>🔊 Listen to Summary:</h3>
+    <audio controls>
+        <source src="{{ audio_url }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+{% endif %}
+
+</body>
+</html>
